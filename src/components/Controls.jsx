@@ -5,9 +5,9 @@ import SelectRegion from "./SelectRegion";
 export default function Controls({ params, setParams, onSubmit, onGetCsv }) {
   const handleErrorChange = (e) => {
     if (e.target.value === "") {
-      setParams({ ...params, error: 0 });
+      setParams({ ...params, errors: 0 });
     } else {
-      setParams({ ...params, error: parseFloat(e.target.value) });
+      setParams({ ...params, errors: parseFloat(e.target.value) });
     }
   };
 
@@ -43,7 +43,7 @@ export default function Controls({ params, setParams, onSubmit, onGetCsv }) {
           fullWidth
           type="number"
           onChange={handleErrorChange}
-          value={params.error}
+          value={params.errors}
         />
       </Grid>
       <Grid item xs={6}>
@@ -56,7 +56,7 @@ export default function Controls({ params, setParams, onSubmit, onGetCsv }) {
           min={0}
           max={10}
           onChange={handleErrorChange}
-          value={params.error}
+          value={params.errors}
         />
       </Grid>
       <Grid item xs={12} textAlign="center">

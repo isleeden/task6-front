@@ -7,12 +7,12 @@ const api = axios.create({
 });
 
 export class Service {
-  static getData = ({ region, seed, limit, page }) => {
-    return api.get(`/${region}`, { params: { seed, limit, page } });
+  static getData = ({ region, seed, limit, page, errors }) => {
+    return api.get(`/${region}`, { params: { seed, limit, page, errors } });
   };
 
-  static getCsv = ({region, seed, count}) => {
+  static getCsv = ({ region, seed, count }) => {
     return api.get(`/csv`, { params: { seed, count, region } });
-  }
+  };
 }
 export default api;

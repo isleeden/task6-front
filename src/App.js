@@ -11,7 +11,7 @@ function App() {
   const [params, setParams] = useState({
     region: regions[0],
     seed: "",
-    error: 0,
+    errors: 0,
   });
   const [data, setData] = useState([]);
   const [page, setPage] = useState(0);
