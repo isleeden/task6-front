@@ -54,10 +54,12 @@ function App() {
     if (data.length === 0) {
       return;
     }
-    setPage(page + 1);
     const response = await getData({ limit: 10, page });
-    const responseData = response?.data;
-    setData([...data, ...responseData]);
+    if (response.data) {
+      setPage(page + 1);
+      const responseData = response.data;
+      setData([...data, ...responseData]);
+    }
   };
 
   useScroll(childRef, getDataOnScroll);
