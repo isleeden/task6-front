@@ -31,7 +31,10 @@ function App() {
       seed: params.seed,
       count: page * 10,
     });
-    const csv = response.data;
+    downloadCsv(response.data);
+  };
+
+  const downloadCsv = (csv) => {
     const hiddenElement = document.createElement("a");
     hiddenElement.href = "data:text/csv;charset=utf-8," + encodeURI(csv);
     hiddenElement.target = "_blank";
